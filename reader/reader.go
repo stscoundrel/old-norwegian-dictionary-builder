@@ -19,7 +19,12 @@ func ReadLinesFromDictionary() []string {
 
 	scanner := bufio.NewScanner(file)
 
-	const maxCapacity = 165536
+	/**
+	 * Increase default buf capacity.
+	 * Dictionar contains some _long_ lines,
+	 * which would otherwise break.
+	 */
+	const maxCapacity = 70000
 	buf := make([]byte, maxCapacity)
 	scanner.Buffer(buf, maxCapacity)
 
