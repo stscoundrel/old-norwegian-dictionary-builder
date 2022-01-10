@@ -1,9 +1,9 @@
 package parser
 
 type DictionaryEntry struct {
-	headword     string
-	partOfSpeech string
-	definition   string
+	Headword     string `json:"word"`
+	PartOfSpeech string `json:"partofspeech"`
+	Definition   string `json:"definition"`
 }
 
 type DictionaryEntries = []DictionaryEntry

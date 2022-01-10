@@ -11,15 +11,15 @@ func TestParsesLineToEntry(t *testing.T) {
 	}
 	result := ParseLines(lines)
 
-	if result[0].headword != "vígmálugr" {
-		t.Error("Did not return expected content. Received", result[0].headword, "expected ", "vígmálugr")
+	if result[0].Headword != "vígmálugr" {
+		t.Error("Did not return expected content. Received", result[0].Headword, "expected ", "vígmálugr")
 	}
 
-	if result[0].partOfSpeech != "adj" {
-		t.Error("Did not return expected content. Received", result[0].partOfSpeech, "expected ", "adj")
+	if result[0].PartOfSpeech != "adj" {
+		t.Error("Did not return expected content. Received", result[0].PartOfSpeech, "expected ", "adj")
 	}
 
-	if result[0].definition != "vígmálugr, adj. tilbøielig til at tale omKamp, Drab; hann var maðr - víg-málugr ok íllmálugr Háv. 219." {
+	if result[0].Definition != "vígmálugr, adj. tilbøielig til at tale omKamp, Drab; hann var maðr - víg-málugr ok íllmálugr Háv. 219." {
 		t.Error("Did not return expected definition.")
 	}
 }

@@ -1,14 +1,20 @@
 package parser
 
-import "strings"
+import (
+	"strings"
+)
 
-func formatLineToEntry(line string) DictionaryEntry {
+func formatLineToEntry(line string) (bool, DictionaryEntry) {
 	parts := strings.Split(line, "|")
 
-	return DictionaryEntry{
-		headword:     parts[0],
-		partOfSpeech: parts[1],
-		definition:   parts[2],
+	if len(parts) < 3 {
+		return false, DictionaryEntry{}
+	}
+
+	return true, DictionaryEntry{
+		Headword:     parts[0],
+		PartOfSpeech: parts[1],
+		Definition:   parts[2],
 	}
 }
 
@@ -16,7 +22,11 @@ func ParseLines(lines []string) DictionaryEntries {
 	entries := DictionaryEntries{}
 
 	for _, line := range lines {
-		entries = append(entries, formatLineToEntry(line))
+		isValidEntry, entry := formatLineToEntry(line)
+
+		if isValidEntry {
+			entries = append(entries, entry)
+		}
 	}
 
 	return entries
