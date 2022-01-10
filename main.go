@@ -17,6 +17,14 @@ func ToJson() {
 	writer.WriteJson("build/dictionary.json", entries)
 }
 
+func ToDsl() {
+	lines := reader.ReadLinesFromDictionary()
+	entries := parser.ParseLines(lines)
+
+	writer.WriteDsl("build/dictionary.dsl", entries)
+}
+
 func main() {
 	ToJson()
+	ToDsl()
 }
