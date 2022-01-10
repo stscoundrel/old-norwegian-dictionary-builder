@@ -4,13 +4,20 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"path/filepath"
+	"runtime"
 )
 
-const DICTIONARY_PATH = "./resources/dictionary.txt"
+func getDictionaryPath() string {
+	_, base, _, _ := runtime.Caller(0)
+	basepath := filepath.Dir(base)
+
+	return basepath + "/resources/dictionary.txt"
+}
 
 func ReadLinesFromDictionary() []string {
 	result := []string{}
-	file, err := os.Open(DICTIONARY_PATH)
+	file, err := os.Open(getDictionaryPath())
 
 	if err != nil {
 		fmt.Println("Could not read dictionary file: ", err)
