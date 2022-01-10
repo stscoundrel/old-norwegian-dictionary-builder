@@ -20,7 +20,15 @@ func ToDsl() {
 	writer.WriteDsl("build/dictionary.dsl", entries)
 }
 
+func ToXml() {
+	lines := reader.ReadLinesFromDictionary()
+	entries := parser.ParseLines(lines)
+
+	writer.WriteXml("build/dictionary.xml", entries)
+}
+
 func main() {
 	ToJson()
 	ToDsl()
+	ToXml()
 }
