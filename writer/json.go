@@ -9,7 +9,7 @@ import (
 )
 
 func WriteJson(filePath string, entries parser.DictionaryEntries) {
-	file, _ := json.MarshalIndent(entries, "", " ")
+	file, _ := json.MarshalIndent(entries, "", "  ")
 
 	err := ioutil.WriteFile(filePath, file, 0644)
 
