@@ -10,7 +10,7 @@ import (
 
 func WriteXml(filePath string, entries parser.DictionaryEntries) {
 	entriesWithRoot := parser.Dictionary{DictionaryRoot: entries}
-	file, _ := xml.MarshalIndent(entriesWithRoot, "", "  ")
+	file, _ := xml.MarshalIndent(entriesWithRoot, "", "    ")
 
 	err := ioutil.WriteFile(filePath, file, 0644)
 
