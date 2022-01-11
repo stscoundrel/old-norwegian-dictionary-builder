@@ -9,7 +9,8 @@ import (
 )
 
 func WriteXml(filePath string, entries parser.DictionaryEntries) {
-	file, _ := xml.MarshalIndent(entries, "", "  ")
+	entriesWithRoot := parser.Dictionary{DictionaryRoot: entries}
+	file, _ := xml.MarshalIndent(entriesWithRoot, "", "  ")
 
 	err := ioutil.WriteFile(filePath, file, 0644)
 

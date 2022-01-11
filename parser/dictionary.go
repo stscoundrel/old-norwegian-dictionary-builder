@@ -7,3 +7,8 @@ type DictionaryEntry struct {
 }
 
 type DictionaryEntries = []DictionaryEntry
+
+// Root struct for XML ouput.
+type Dictionary struct {
+	DictionaryRoot DictionaryEntries `xml:"DictionaryEntry"`
+}
