@@ -30,3 +30,15 @@ func TestCreatesDslBuild(t *testing.T) {
 		t.Error("DSL output file not found in build directory")
 	}
 }
+
+func TestCreatesXmlBuild(t *testing.T) {
+	ToXml()
+
+	_, err := os.Stat("./build/dictionary.xml")
+
+	fmt.Println(err)
+
+	if errors.Is(err, os.ErrNotExist) {
+		t.Error("XML output file not found in build directory")
+	}
+}

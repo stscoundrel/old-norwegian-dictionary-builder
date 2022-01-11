@@ -5,10 +5,11 @@ Build "Dictionary of the Old Norwegian Language" into easier-to-use data formats
 Available formats:
 - JSON
 - DSL
+- XML
 
 ### Usage
 
-Main package exposes `ToJson` and `ToDsl` functions, which respecticely generate output files in /build/ directory. Running `main` function generates all outputs.
+Main package exposes `ToJson`, `ToDsl` and `ToXml` functions, which respecticely generate output files in /build/ directory. Running `main` function generates all outputs.
 
 ### About "Dictionary of the Old Norwegian Language"
 
