@@ -2,7 +2,7 @@ package parser
 
 type DictionaryEntry struct {
 	Headword     string `json:"word" xml:"word"`
-	PartOfSpeech string `json:"partofspeech" xml:"partOfSpeech,attr"`
+	PartOfSpeech string `json:"partOfSpeech" xml:"partOfSpeech,attr"`
 	Definition   string `json:"definition" xml:"definition"`
 }
 
