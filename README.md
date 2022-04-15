@@ -6,10 +6,11 @@ Available formats:
 - JSON
 - DSL
 - XML
+- Go package
 
 ### Usage
 
-Main package exposes `ToJson`, `ToDsl` and `ToXml` functions, which respecticely generate output files in /build/ directory. Running `main` function generates all outputs.
+Main package exposes `ToJson`, `ToDsl`, `ToXml` and `ToGoPackage` functions, which respecticely generate output files in /build/ directory. Running `main` function generates all outputs.
 
 ### About "Dictionary of the Old Norwegian Language"
 

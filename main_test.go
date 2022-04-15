@@ -42,3 +42,15 @@ func TestCreatesXmlBuild(t *testing.T) {
 		t.Error("XML output file not found in build directory")
 	}
 }
+
+func TestCreatesGoPackageBuild(t *testing.T) {
+	ToGoPackage()
+
+	_, err := os.Stat("./build/dictionary.go")
+
+	fmt.Println(err)
+
+	if errors.Is(err, os.ErrNotExist) {
+		t.Error("Go package output file not found in build directory")
+	}
+}
