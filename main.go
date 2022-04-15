@@ -27,8 +27,16 @@ func ToXml() {
 	writer.WriteXml("build/dictionary.xml", entries)
 }
 
+func ToGoPackage() {
+	lines := reader.ReadLinesFromDictionary()
+	entries := parser.ParseLines(lines)
+
+	writer.WriteGoPackage("build/dictionary.go", entries)
+}
+
 func main() {
 	ToJson()
 	ToDsl()
 	ToXml()
+	ToGoPackage()
 }
