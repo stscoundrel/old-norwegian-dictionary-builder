@@ -34,9 +34,17 @@ func ToGoPackage() {
 	writer.WriteGoPackage("build/dictionary.go", entries)
 }
 
+func ToTypeScriptModule() {
+	lines := reader.ReadLinesFromDictionary()
+	entries := parser.ParseLines(lines)
+
+	writer.WriteTypeScriptModule("build/dictionary.ts", entries)
+}
+
 func main() {
 	ToJson()
 	ToDsl()
 	ToXml()
 	ToGoPackage()
+	ToTypeScriptModule()
 }
