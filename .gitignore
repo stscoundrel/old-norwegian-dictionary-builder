@@ -17,3 +17,4 @@
 # Build files
 /build/
 !/build/.gitkeep
+.DS_Store

@@ -54,3 +54,15 @@ func TestCreatesGoPackageBuild(t *testing.T) {
 		t.Error("Go package output file not found in build directory")
 	}
 }
+
+func TestCreatesTypeScriptModuleBuild(t *testing.T) {
+	ToTypeScriptModule()
+
+	_, err := os.Stat("./build/dictionary.ts")
+
+	fmt.Println(err)
+
+	if errors.Is(err, os.ErrNotExist) {
+		t.Error("TypeScript module output file not found in build directory")
+	}
+}
