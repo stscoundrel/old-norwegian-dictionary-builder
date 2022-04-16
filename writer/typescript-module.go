@@ -28,7 +28,7 @@ func formatTypeScriptModule(entries parser.DictionaryEntries) []string {
 		"  definition: string,",
 		"}",
 		"",
-		"export const getDictionary = (): DictionaryEntry[] => [",
+		"const entries = [",
 	}
 
 	for _, entry := range entries {
@@ -37,6 +37,8 @@ func formatTypeScriptModule(entries parser.DictionaryEntries) []string {
 	}
 
 	typeScriptModule = append(typeScriptModule, "]")
+	typeScriptModule = append(typeScriptModule, "")
+	typeScriptModule = append(typeScriptModule, "export const getDictionary = (): DictionaryEntry[] => entries")
 	typeScriptModule = append(typeScriptModule, "")
 	typeScriptModule = append(typeScriptModule, "export default getDictionary")
 
