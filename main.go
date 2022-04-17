@@ -34,6 +34,13 @@ func ToGoPackage() {
 	writer.WriteGoPackage("build/dictionary.go", entries)
 }
 
+func ToRustModule() {
+	lines := reader.ReadLinesFromDictionary()
+	entries := parser.ParseLines(lines)
+
+	writer.WriteRustModule("build/dictionary.rs", entries)
+}
+
 func ToTypeScriptModule() {
 	lines := reader.ReadLinesFromDictionary()
 	entries := parser.ParseLines(lines)
@@ -53,6 +60,7 @@ func main() {
 	ToDsl()
 	ToXml()
 	ToGoPackage()
+	ToRustModule()
 	ToTypeScriptModule()
 	ToPythonClass()
 }

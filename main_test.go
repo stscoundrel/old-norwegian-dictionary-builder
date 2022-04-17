@@ -55,6 +55,18 @@ func TestCreatesGoPackageBuild(t *testing.T) {
 	}
 }
 
+func TestCreatesRustModuleBuild(t *testing.T) {
+	ToRustModule()
+
+	_, err := os.Stat("./build/dictionary.rs")
+
+	fmt.Println(err)
+
+	if errors.Is(err, os.ErrNotExist) {
+		t.Error("Rust module output file not found in build directory")
+	}
+}
+
 func TestCreatesTypeScriptModuleBuild(t *testing.T) {
 	ToTypeScriptModule()
 
