@@ -12,7 +12,7 @@ Hardcoded packages/modules/classes for programming languages:
 - TypeScript module
 - Python class
 
-The hardcoded language packages exist to benchmark hardcoded entries against reading them from JSON/similar. Seems to depend on language vrrsion which approach is faster. For example, TypeScript seems faster without file reading, whereas Python seems to be notably faster when read from file.
+The hardcoded language packages exist to benchmark hardcoded entries against reading them from JSON/similar. Seems to depend on language which approach is faster. For example, Go is much faster hardcoded, TypeScript seems a bit faster without file reading, whereas Python seems to be much slower when not read from a file.
 
 ### Usage
 
