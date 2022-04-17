@@ -6,8 +6,13 @@ Available formats:
 - JSON
 - DSL
 - XML
+
+Hardcoded packages/modules/classes for programming languages:
 - Go package
 - TypeScript module
+- Python class
+
+The hardcoded language packages exist to benchmark hardcoded entries against reading them from JSON/similar. Seems to depend on language vrrsion which approach is faster. For example, TypeScript seems faster without file reading, whereas Python seems to be notably faster when read from file.
 
 ### Usage
 
