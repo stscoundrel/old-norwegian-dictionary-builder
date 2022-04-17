@@ -66,3 +66,15 @@ func TestCreatesTypeScriptModuleBuild(t *testing.T) {
 		t.Error("TypeScript module output file not found in build directory")
 	}
 }
+
+func TestCreatesPythonClassBuild(t *testing.T) {
+	ToPythonClass()
+
+	_, err := os.Stat("./build/dictionary.py")
+
+	fmt.Println(err)
+
+	if errors.Is(err, os.ErrNotExist) {
+		t.Error("Python class output file not found in build directory")
+	}
+}
