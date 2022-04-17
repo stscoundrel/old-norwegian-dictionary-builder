@@ -41,10 +41,18 @@ func ToTypeScriptModule() {
 	writer.WriteTypeScriptModule("build/dictionary.ts", entries)
 }
 
+func ToPythonClass() {
+	lines := reader.ReadLinesFromDictionary()
+	entries := parser.ParseLines(lines)
+
+	writer.WritePythonClass("build/dictionary.py", entries)
+}
+
 func main() {
 	ToJson()
 	ToDsl()
 	ToXml()
 	ToGoPackage()
 	ToTypeScriptModule()
+	ToPythonClass()
 }
