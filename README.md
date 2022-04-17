@@ -10,13 +10,16 @@ Available formats:
 Hardcoded packages/modules/classes for programming languages:
 - Go package
 - TypeScript module
+- Rust module
 - Python class
 
-The hardcoded language packages exist to benchmark hardcoded entries against reading them from JSON/similar. Seems to depend on language which approach is faster. For example, Go is much faster hardcoded, TypeScript seems a bit faster without file reading, whereas Python seems to be much slower when not read from a file.
+The hardcoded language packages exist to benchmark hardcoded entries against reading them from JSON/similar. The results vary based on language. For example, Rust and Go are much faster hardcoded. In case of Rust it hundreds of ms vs hundreds of µs.
+
+TypeScript is slightly faster hardcoded, but Python on the other hand is much slower if hardcoded.
 
 ### Usage
 
-Main package exposes `ToJson`, `ToDsl`, `ToXml`, `ToGoPackage` and `ToTypeScriptModule` functions, which respecticely generate output files in /build/ directory. Running `main` function generates all outputs.
+Main package exposes `ToJson`, `ToDsl`, `ToXml`, `ToGoPackage`, `ToRustModule` and `ToTypeScriptModule` functions, which respecticely generate output files in /build/ directory. Running `main` function generates all outputs.
 
 ### About "Dictionary of the Old Norwegian Language"
 
