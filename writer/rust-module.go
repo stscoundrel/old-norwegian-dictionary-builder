@@ -28,14 +28,14 @@ func formatRustModule(entries parser.DictionaryEntries) []string {
 		"	pub definition: &'static str,",
 		"}",
 		"",
-		"const dictionary: [DictionaryEntry; 42021] = [",
+		"static DICTIONARY: [DictionaryEntry; 42021] = [",
 	}
 	for _, entry := range entries {
 		entryStruct := formatRustStructEntry(entry)
 		rustModule = append(rustModule, entryStruct...)
 	}
 
-	rustModule = append(rustModule, "]")
+	rustModule = append(rustModule, "];")
 	rustModule = append(rustModule, "")
 	rustModule = append(rustModule, "pub fn get_dictionary() -> [DictionaryEntry; 42021] {")
 	rustModule = append(rustModule, "	return dictionary;")
