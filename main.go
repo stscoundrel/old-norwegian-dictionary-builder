@@ -55,6 +55,13 @@ func ToPythonClass() {
 	writer.WritePythonClass("build/dictionary.py", entries)
 }
 
+func ToCSharpClass() {
+	lines := reader.ReadLinesFromDictionary()
+	entries := parser.ParseLines(lines)
+
+	writer.WriteCSharpClass("build/Dictionary.cs", entries)
+}
+
 func main() {
 	ToJson()
 	ToDsl()
@@ -63,4 +70,5 @@ func main() {
 	ToRustModule()
 	ToTypeScriptModule()
 	ToPythonClass()
+	ToCSharpClass()
 }

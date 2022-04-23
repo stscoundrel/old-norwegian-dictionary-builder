@@ -90,3 +90,15 @@ func TestCreatesPythonClassBuild(t *testing.T) {
 		t.Error("Python class output file not found in build directory")
 	}
 }
+
+func TestCSharpClassBuild(t *testing.T) {
+	ToCSharpClass()
+
+	_, err := os.Stat("./build/Dictionary.cs")
+
+	fmt.Println(err)
+
+	if errors.Is(err, os.ErrNotExist) {
+		t.Error("C# class output file not found in build directory")
+	}
+}
