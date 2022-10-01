@@ -13,7 +13,7 @@ Hardcoded packages/modules/classes for programming languages:
 - Rust module
 - Python class
 
-The hardcoded language packages exist to benchmark hardcoded entries against reading them from JSON/similar. The results vary based on language. For example, Rust and Go are much faster hardcoded. In case of Rust it hundreds of ms vs hundreds of µs.
+The hardcoded language packages exist to benchmark hardcoded entries against reading them from JSON/similar. The results vary based on language. For example, Rust and Go are much faster hardcoded. In case of Rust it is hundreds of ms vs hundreds of µs.
 
 TypeScript is slightly faster hardcoded, but Python on the other hand is much slower if hardcoded.
 
