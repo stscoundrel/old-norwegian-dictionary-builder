@@ -8,6 +8,8 @@ import (
 	"runtime"
 )
 
+const LINES_IN_DICTIONARY = 42022
+
 func getDictionaryPath() string {
 	_, base, _, _ := runtime.Caller(0)
 	basepath := filepath.Dir(base)
@@ -16,7 +18,7 @@ func getDictionaryPath() string {
 }
 
 func ReadLinesFromDictionary() []string {
-	result := []string{}
+	result := make([]string, 0, LINES_IN_DICTIONARY)
 	file, err := os.Open(getDictionaryPath())
 
 	if err != nil {
