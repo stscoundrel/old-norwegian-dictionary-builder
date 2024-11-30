@@ -4,6 +4,8 @@ import (
 	"strings"
 )
 
+const VALID_ENTRIES_IN_DICTIONARY = 42021
+
 func formatLineToEntry(line string) (bool, DictionaryEntry) {
 	parts := strings.Split(line, "|")
 
@@ -19,7 +21,7 @@ func formatLineToEntry(line string) (bool, DictionaryEntry) {
 }
 
 func ParseLines(lines []string) DictionaryEntries {
-	entries := DictionaryEntries{}
+	entries := make(DictionaryEntries, 0, VALID_ENTRIES_IN_DICTIONARY)
 
 	for _, line := range lines {
 		isValidEntry, entry := formatLineToEntry(line)
