@@ -14,9 +14,9 @@ func formatLineToEntry(line string) (bool, DictionaryEntry) {
 	}
 
 	return true, DictionaryEntry{
-		Headword:     parts[0],
-		PartOfSpeech: parts[1],
-		Definition:   parts[2],
+		Headword:     strings.TrimSpace(parts[0]),
+		PartOfSpeech: strings.TrimSpace(parts[1]),
+		Definition:   strings.TrimSpace(parts[2]),
 	}
 }
 

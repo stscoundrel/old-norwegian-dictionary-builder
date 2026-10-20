@@ -23,3 +23,21 @@ func TestParsesLineToEntry(t *testing.T) {
 		t.Error("Did not return expected definition.")
 	}
 }
+
+func TestParseLinesTrimsTrailingWhitespace(t *testing.T) {
+	lines := []string{"vígmálugr \t|adj \t|vígmálugr, adj. tilbøielig til at tale om Kamp, Drab. \t"}
+	result := ParseLines(lines)
+
+	if len(result) != 1 {
+		t.Fatalf("Expected 1 entry, got %d", len(result))
+	}
+
+	expected := DictionaryEntry{
+		Headword:     "vígmálugr",
+		PartOfSpeech: "adj",
+		Definition:   "vígmálugr, adj. tilbøielig til at tale om Kamp, Drab.",
+	}
+	if result[0] != expected {
+		t.Errorf("Expected entry %#v, got %#v", expected, result[0])
+	}
+}
